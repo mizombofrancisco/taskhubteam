@@ -1,0 +1,218 @@
+{
+  "name": "ProjectProposal",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "description": {
+      "type": "string"
+    },
+    "proposer_id": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "background": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "areas_involved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "target_audience": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "methodology": {
+      "type": "string",
+      "enum": [
+        "AGILE",
+        "SCRUM",
+        "KANBAN",
+        "WATERFALL",
+        "OTHER"
+      ],
+      "default": "AGILE"
+    },
+    "timeline_weeks": {
+      "type": "integer",
+      "default": 12
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ],
+      "default": "MEDIUM"
+    },
+    "proposed_team": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "default": 1
+          },
+          "skills": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    },
+    "proposed_equipment": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer",
+            "default": 1
+          },
+          "estimated_cost": {
+            "type": "number",
+            "default": 0
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    },
+    "estimated_investment": {
+      "type": "number",
+      "default": 0
+    },
+    "investment_breakdown": {
+      "type": "string"
+    },
+    "expected_benefits": {
+      "type": "string"
+    },
+    "success_metrics": {
+      "type": "string"
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "probability": {
+            "type": "string",
+            "enum": [
+              "LOW",
+              "MEDIUM",
+              "HIGH"
+            ],
+            "default": "MEDIUM"
+          },
+          "impact": {
+            "type": "string",
+            "enum": [
+              "LOW",
+              "MEDIUM",
+              "HIGH"
+            ],
+            "default": "MEDIUM"
+          },
+          "mitigation": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    },
+    "documentation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "uploaded_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "default": []
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "SUBMITTED",
+        "UNDER_REVIEW",
+        "APPROVED",
+        "REJECTED",
+        "REVISION_REQUIRED"
+      ],
+      "default": "DRAFT"
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reviewed_by": {
+      "type": "string"
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "review_note": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "final_decision": {
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "APPROVED",
+        "REJECTED",
+        "REVISION_REQUIRED"
+      ],
+      "default": "PENDING"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "proposer_id",
+    "status"
+  ]
+}

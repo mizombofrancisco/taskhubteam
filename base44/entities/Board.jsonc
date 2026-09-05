@@ -1,0 +1,31 @@
+{
+  "name": "Board",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "description": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string",
+      "default": "#0033A0"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "owner_id": {
+      "type": "string"
+    },
+    "is_archived": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "project_id"
+  ]
+}

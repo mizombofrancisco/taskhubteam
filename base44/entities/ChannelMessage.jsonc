@@ -1,0 +1,41 @@
+{
+  "name": "ChannelMessage",
+  "type": "object",
+  "properties": {
+    "channel_id": {
+      "type": "string"
+    },
+    "sender_id": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string",
+      "maxLength": 4000
+    },
+    "parent_message_id": {
+      "type": "string"
+    },
+    "thread_reply_count": {
+      "type": "integer",
+      "default": 0
+    },
+    "attachment_url": {
+      "type": "string"
+    },
+    "attachment_name": {
+      "type": "string"
+    },
+    "linked_task_id": {
+      "type": "string"
+    },
+    "is_system": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "channel_id",
+    "sender_id",
+    "content"
+  ]
+}

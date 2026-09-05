@@ -1,0 +1,50 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "TASK_ASSIGNED",
+        "TASK_MOVED",
+        "TASK_DUE_SOON",
+        "TASK_OVERDUE",
+        "WORKLOG_SUBMITTED",
+        "WORKLOG_APPROVED",
+        "WORKLOG_REJECTED",
+        "TEAM_ADDED",
+        "PROJECT_STATUS_CHANGED",
+        "NEW_DIRECT_MESSAGE",
+        "NEW_CHANNEL_MESSAGE",
+        "MENTION",
+        "THREAD_REPLY",
+        "SPRINT_DUE_SOON",
+        "SPRINT_OVERDUE"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 140
+    },
+    "body": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "link": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "user_id",
+    "type",
+    "title"
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "name": "Task",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "reference": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 180
+    },
+    "description": {
+      "type": "string"
+    },
+    "assigned_to": {
+      "type": "string"
+    },
+    "duration_days": {
+      "type": "integer",
+      "default": 1
+    },
+    "estimated_hours": {
+      "type": "number"
+    },
+    "story_points": {
+      "type": "number",
+      "default": 0
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ],
+      "default": "MEDIUM"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "BACKLOG",
+        "TO_DO",
+        "IN_PROGRESS",
+        "CODE_REVIEW",
+        "DONE"
+      ],
+      "default": "BACKLOG"
+    },
+    "task_type": {
+      "type": "string",
+      "enum": [
+        "DEV",
+        "DESIGN",
+        "TRAINING",
+        "BUGFIX"
+      ],
+      "default": "DEV"
+    },
+    "sprint_id": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "order_index": {
+      "type": "integer",
+      "default": 0
+    },
+    "blocked_reason": {
+      "type": "string",
+      "maxLength": 200
+    }
+  },
+  "required": [
+    "project_id",
+    "title",
+    "assigned_to",
+    "duration_days",
+    "start_date",
+    "due_date",
+    "task_type"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": [
+        "ADMIN",
+        "PROJECT_MANAGER",
+        "DEVELOPER",
+        "DESIGNER",
+        "TRAINER"
+      ],
+      "default": "DEVELOPER"
+    },
+    "job_title": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "avatar_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "phone": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "daily_capacity_hours": {
+      "type": "number",
+      "default": 8
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ONLINE",
+        "BUSY",
+        "OFFLINE"
+      ],
+      "default": "OFFLINE"
+    },
+    "status_message": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "last_seen_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notification_preferences": {
+      "type": "object",
+      "properties": {
+        "tasks": {
+          "type": "boolean",
+          "default": true
+        },
+        "worklogs": {
+          "type": "boolean",
+          "default": true
+        },
+        "messages": {
+          "type": "boolean",
+          "default": true
+        },
+        "mentions": {
+          "type": "boolean",
+          "default": true
+        },
+        "email_digest": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "default": {}
+    }
+  }
+}

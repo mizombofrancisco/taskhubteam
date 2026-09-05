@@ -1,0 +1,32 @@
+{
+  "name": "TeamMember",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "project_role": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "allocation_percent": {
+      "type": "number",
+      "default": 100
+    },
+    "joined_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "removed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "project_id",
+    "user_id"
+  ]
+}

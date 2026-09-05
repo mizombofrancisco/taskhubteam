@@ -1,0 +1,72 @@
+{
+  "name": "LeaveRequest",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "VACATION",
+        "SICK",
+        "PERSONAL",
+        "MATERNITY",
+        "PATERNITY",
+        "UNPAID",
+        "BEREAVEMENT",
+        "STUDY",
+        "OTHER"
+      ],
+      "default": "VACATION"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "days": {
+      "type": "number",
+      "default": 1
+    },
+    "half_day": {
+      "type": "boolean",
+      "default": false
+    },
+    "reason": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "APPROVED",
+        "REJECTED",
+        "CANCELLED"
+      ],
+      "default": "PENDING"
+    },
+    "reviewed_by": {
+      "type": "string"
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "review_note": {
+      "type": "string",
+      "maxLength": 255
+    }
+  },
+  "required": [
+    "user_id",
+    "type",
+    "start_date",
+    "end_date",
+    "status"
+  ]
+}

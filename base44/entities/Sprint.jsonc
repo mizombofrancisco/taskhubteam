@@ -1,0 +1,39 @@
+{
+  "name": "Sprint",
+  "type": "object",
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "goal": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PLANNING",
+        "ACTIVE",
+        "COMPLETED"
+      ],
+      "default": "PLANNING"
+    }
+  },
+  "required": [
+    "project_id",
+    "name",
+    "start_date",
+    "end_date"
+  ]
+}

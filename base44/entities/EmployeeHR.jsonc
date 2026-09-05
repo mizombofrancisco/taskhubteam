@@ -1,0 +1,94 @@
+{
+  "name": "EmployeeHR",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "admission_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "termination_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "employment_status": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "ON_LEAVE",
+        "PROBATION",
+        "SUSPENDED",
+        "TERMINATED"
+      ],
+      "default": "ACTIVE"
+    },
+    "contract_type": {
+      "type": "string",
+      "enum": [
+        "INDETERMINATE",
+        "DETERMINATE",
+        "PROBATION",
+        "FREELANCE",
+        "INTERNSHIP",
+        "TRAINEE"
+      ],
+      "default": "INDETERMINATE"
+    },
+    "department": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "position": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "base_salary": {
+      "type": "number"
+    },
+    "work_start": {
+      "type": "string",
+      "maxLength": 8
+    },
+    "work_end": {
+      "type": "string",
+      "maxLength": 8
+    },
+    "lunch_start": {
+      "type": "string",
+      "maxLength": 8
+    },
+    "lunch_end": {
+      "type": "string",
+      "maxLength": 8
+    },
+    "weekly_hours": {
+      "type": "number",
+      "default": 40
+    },
+    "vacation_days_entitlement": {
+      "type": "integer",
+      "default": 22
+    },
+    "vacation_days_used": {
+      "type": "integer",
+      "default": 0
+    },
+    "emergency_contact_name": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "emergency_contact_phone": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_id",
+    "admission_date"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "ProposalEvaluation",
+  "type": "object",
+  "properties": {
+    "proposal_id": {
+      "type": "string"
+    },
+    "evaluator_id": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer",
+      "default": 3
+    },
+    "technical_feasibility": {
+      "type": "integer",
+      "default": 3
+    },
+    "business_value": {
+      "type": "integer",
+      "default": 3
+    },
+    "risk_assessment": {
+      "type": "integer",
+      "default": 3
+    },
+    "resource_adequacy": {
+      "type": "integer",
+      "default": 3
+    },
+    "comment": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "recommendation": {
+      "type": "string",
+      "enum": [
+        "APPROVE",
+        "REJECT",
+        "REVISE"
+      ],
+      "default": "APPROVE"
+    }
+  },
+  "required": [
+    "proposal_id",
+    "evaluator_id",
+    "recommendation"
+  ]
+}

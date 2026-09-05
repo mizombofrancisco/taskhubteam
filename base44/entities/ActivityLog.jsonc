@@ -1,0 +1,27 @@
+{
+  "name": "ActivityLog",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "changes": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "entity_type",
+    "action"
+  ]
+}

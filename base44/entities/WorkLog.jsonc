@@ -1,0 +1,63 @@
+{
+  "name": "WorkLog",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "hours_spent": {
+      "type": "number"
+    },
+    "log_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "period_type": {
+      "type": "string",
+      "enum": [
+        "DAILY",
+        "WEEKLY",
+        "MONTHLY"
+      ],
+      "default": "DAILY"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "SUBMITTED",
+        "APPROVED",
+        "REJECTED"
+      ],
+      "default": "SUBMITTED"
+    },
+    "reviewed_by": {
+      "type": "string"
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "review_note": {
+      "type": "string",
+      "maxLength": 255
+    }
+  },
+  "required": [
+    "user_id",
+    "project_id",
+    "hours_spent",
+    "log_date",
+    "description"
+  ]
+}

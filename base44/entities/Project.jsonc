@@ -1,0 +1,76 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "maxLength": 12
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 150
+    },
+    "description": {
+      "type": "string"
+    },
+    "client_name": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "project_leader_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PLANNING",
+        "ACTIVE",
+        "ON_HOLD",
+        "COMPLETED",
+        "CANCELLED"
+      ],
+      "default": "PLANNING"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ],
+      "default": "MEDIUM"
+    },
+    "methodology": {
+      "type": "string",
+      "enum": [
+        "KANBAN",
+        "SCRUM",
+        "BOTH"
+      ],
+      "default": "BOTH"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "estimated_hours": {
+      "type": "number"
+    },
+    "color": {
+      "type": "string",
+      "default": "#0033A0"
+    }
+  },
+  "required": [
+    "code",
+    "name",
+    "project_leader_id",
+    "start_date",
+    "end_date"
+  ]
+}

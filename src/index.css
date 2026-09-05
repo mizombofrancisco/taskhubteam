@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Acuratech Design System — dark navy */
+    --background: 213 47% 8.8%;          /* #0C1421 */
+    --foreground: 213 44% 95.5%;         /* #EEF3F9 */
+    --card: 220 34% 12.5%;               /* #0E1A2C elevated surface */
+    --card-foreground: 213 44% 95.5%;
+    --popover: 220 34% 11%;
+    --popover-foreground: 213 44% 95.5%;
+    --primary: 214 100% 42.5%;          /* #0057D9 Azul Royal */
+    --primary-foreground: 213 44% 97.5%;
+    --secondary: 220 30% 20%;            /* #2B3140 */
+    --secondary-foreground: 213 44% 95.5%;
+    --muted: 220 28% 17%;
+    --muted-foreground: 217 15.6% 65.7%; /* #9AA3B5 */
+    --accent: 199 92% 50.2%;             /* #0BB4F5 Ciano */
+    --accent-foreground: 213 47% 8.8%;
+    --destructive: 0 77% 55.9%;          /* #E5383B */
+    --destructive-foreground: 213 44% 97.5%;
+    --success: 153 100% 32.5%;           /* #00A65A */
+    --warning: 36 91% 54.9%;             /* #F5A623 */
+    --border: 220 26% 20%;
+    --input: 220 28% 18%;
+    --ring: 199 92% 50.2%;
+    --radius: 0.625rem;
+    --font-heading: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sidebar-background: 218 60% 9%;   /* #06122A deep navy */
+    --sidebar-foreground: 213 26% 89.6%;
+    --sidebar-primary: 199 92% 50.2%;
+    --sidebar-primary-foreground: 213 47% 8.8%;
+    --sidebar-accent: 220 34% 14%;
+    --sidebar-accent-foreground: 213 44% 95.5%;
+    --sidebar-border: 220 30% 16%;
+    --sidebar-ring: 199 92% 50.2%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    color-scheme: dark;
+  }
+
+  select option {
+    background-color: hsl(var(--popover));
+    color: hsl(var(--popover-foreground));
+  }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: hsl(220 26% 26%); border-radius: 999px; border: 2px solid transparent; background-clip: padding-box; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(220 26% 34%); background-clip: padding-box; }
+}
+
+@layer components {
+  .acura-gradient {
+    background: linear-gradient(135deg, #061E4A 0%, #0033A0 45%, #0BB4F5 100%);
+  }
+  .acura-card {
+    @apply bg-card border border-border rounded-xl;
+  }
+  .acura-glow {
+    box-shadow: 0 0 0 1px hsl(199 92% 50.2% / 0.15), 0 8px 30px -12px hsl(199 92% 50.2% / 0.35);
+  }
+}

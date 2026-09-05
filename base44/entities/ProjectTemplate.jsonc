@@ -1,0 +1,74 @@
+{
+  "name": "ProjectTemplate",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "description": {
+      "type": "string"
+    },
+    "methodology": {
+      "type": "string",
+      "enum": [
+        "KANBAN",
+        "SCRUM",
+        "BOTH"
+      ],
+      "default": "BOTH"
+    },
+    "color": {
+      "type": "string",
+      "default": "#0033A0"
+    },
+    "boards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "task_type": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          },
+          "duration_days": {
+            "type": "integer"
+          },
+          "stage": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

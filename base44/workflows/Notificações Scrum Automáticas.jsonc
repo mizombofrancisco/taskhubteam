@@ -1,0 +1,45 @@
+{
+  "name": "Notifica\u00e7\u00f5es Scrum Autom\u00e1ticas",
+  "description": "Verifica diariamente tarefas atrasadas e sprints a expirar em projetos Scrum, gerando notifica\u00e7\u00f5es para a equipa.",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "scrum_deadline_notifications",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "check_deadlines": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "checkScrumDeadlines",
+            "args": {}
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Verificar prazos Scrum",
+            "description": "Tarefas atrasadas e sprints a expirar"
+          }
+        }
+      }
+    ]
+  },
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "0 9 * * *",
+      "one_time_date": null,
+      "timezone": "Africa/Lagos",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Invoice",
+  "type": "object",
+  "properties": {
+    "client_name": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "invoice_number": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "issue_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "paid_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "SENT",
+        "PARTIAL",
+        "PAID",
+        "OVERDUE",
+        "CANCELLED"
+      ],
+      "default": "DRAFT"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "client_name",
+    "invoice_number",
+    "issue_date",
+    "amount",
+    "status"
+  ]
+}
