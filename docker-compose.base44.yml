@@ -9,6 +9,8 @@ services:
       - ~/.base44:/root/.base44
     environment:
       - BASE44_PUBLIC_HOST_SUFFIX=${BASE44_PUBLIC_HOST_SUFFIX}
+    env_file:
+      - /run/base44/app.env
     command: ["bash", "/app/.base44-startup.sh"]
     tty: true
     stdin_open: true
