@@ -1,0 +1,14 @@
+services:
+  web:
+    image: node:22
+    working_dir: /app
+    ports:
+      - "3000:5173"
+    volumes:
+      - ./:/app
+      - ~/.base44:/root/.base44
+    environment:
+      - BASE44_PUBLIC_HOST_SUFFIX=${BASE44_PUBLIC_HOST_SUFFIX}
+    command: ["bash", "/app/.base44-startup.sh"]
+    tty: true
+    stdin_open: true
