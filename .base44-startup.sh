@@ -49,4 +49,6 @@ EOF
 echo "[base44-setup] .app.jsonc created with app id: ${APP_ID}"
 
 echo "[base44-setup] Starting base44 dev..."
+# base44 dev reads the app id from .app.jsonc, not from the env var
+unset BASE44_APP_ID
 exec base44 dev
